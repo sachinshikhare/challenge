@@ -1,0 +1,21 @@
+1. Build was failing. Needed to Add below entries in build.gradle to make it stable
+  compileOnly("org.projectlombok:lombok")
+  testCompile("org.springframework.boot:spring-boot-starter-test")
+
+  springBoot {
+    mainClass = "com.db.awmd.challenge.DevChallengeApplication"
+  }
+
+2. Added one TODO in AccountsService.moneyTransfer()
+As a better practice, enhancement mentioned in TODO needs to be handled in getAccount method only.
+
+3. We can implement annotation based validation on input params.
+e.g. Whether fromAccountId, toAccountId are valid or not. Balance provided is valid or not. We can use annotation for that.
+
+4. Exception handling could be enhanced. We can use @@ControllerAdvice.
+
+5. Logging could be improved. It would help in production support.
+
+6. Multithreading is implemented considering current in memory storage of accounts hashmap. In case of actual @JpaRepository, implementation may need to change.
+
+Assumption - While solving this coding assignment, I assumed that i have to take care of only said functionality (balance transfer between given accounts)
